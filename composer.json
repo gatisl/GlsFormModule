@@ -1,6 +1,6 @@
 {
     "name": "gls/form-module",
-    "description": "Zend Framework 2 Module that integrates the jms serializer library",
+    "description": "Zend2 form element for working with Doctrine Translatable",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -28,11 +28,6 @@
     "autoload": {
         "psr-0": {
             "GlsFormModule\\": "src/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "master"
         }
     }
 }
