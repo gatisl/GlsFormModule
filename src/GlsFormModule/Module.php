@@ -20,7 +20,7 @@ class Module implements FormElementProviderInterface, ViewHelperProviderInterfac
     {
         return array(
             'invokables' => array(
-                'formTranslations' => 'Common\View\Helper\FormTranslations',
+                'formTranslations' => 'GlsFormModule\View\Helper\FormTranslations',
             )
         );
     }

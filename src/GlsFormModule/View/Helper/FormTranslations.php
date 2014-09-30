@@ -4,7 +4,7 @@ namespace GlsFormModule\View\Helper;
 
 use Zend\View\Helper\AbstractHelper as BaseAbstractHelper;
 use Zend\Form\ElementInterface;
-use Common\Form\Element\TranslateableElement;
+use GlsFormModule\Form\Element\TranslateableElement;
 use Zend\Form\FieldsetInterface;
 
 class FormTranslations extends BaseAbstractHelper
@@ -12,7 +12,7 @@ class FormTranslations extends BaseAbstractHelper
     public function __invoke(ElementInterface $element)
     {
         if (! $element instanceof TranslateableElement) {
-            throw new \InvalidArgumentException('Element not instance of Common\Form\Element\TranslateableElement');
+            throw new \InvalidArgumentException('Element not instance of GlsFormModule\Form\Element\TranslateableElement');
         }
         
         return $this->render($element);
