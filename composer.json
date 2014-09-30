@@ -1,0 +1,38 @@
+{
+    "name": "gls/form-module",
+    "description": "Zend Framework 2 Module that integrates the jms serializer library",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "translateable",
+        "form",
+        "doctrine",
+        "module",
+        "zf2"
+    ],
+    "authors": [
+        {
+            "name": "Gatis Latkovskis",
+            "email": "gatis.latkovskis@gmail.com"
+        },
+        {
+            "name": "GIT repo",
+            "homepage": "https://github.com/gatisl/GlsFormModule"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "GlsFormModule\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}
