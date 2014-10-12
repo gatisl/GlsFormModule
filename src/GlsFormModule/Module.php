@@ -4,6 +4,7 @@ namespace GlsFormModule;
 
 use Zend\ModuleManager\Feature\FormElementProviderInterface;
 use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
+use GlsFormModule\View\Helper\FormTranslations;
 
 class Module implements FormElementProviderInterface, ViewHelperProviderInterface
 {
@@ -20,8 +21,15 @@ class Module implements FormElementProviderInterface, ViewHelperProviderInterfac
     {
         return array(
             'invokables' => array(
-                'formTranslations' => 'GlsFormModule\View\Helper\FormTranslations',
-            )
+            
+            ),
+            'factories' => array(  
+                'formTranslations' => function ($pluginManager) {
+                    $config = $pluginManager->getServiceLocator()->get('config');
+                    $errorViewHelper = isset($config['gls_form']['errorViewHelper']) ? $config['gls_form']['errorViewHelper'] : 'formelementerrors';
+                    return new FormTranslations($errorViewHelper);
+                },
+            ),
         );
     }
 }

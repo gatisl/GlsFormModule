@@ -9,6 +9,13 @@ use Zend\Form\FieldsetInterface;
 
 class FormTranslations extends BaseAbstractHelper
 {
+    private $errorViewHelper;
+    
+    public function __construct($errorViewHelper) 
+    {
+        $this->errorViewHelper = $errorViewHelper;
+    }
+
     public function __invoke(ElementInterface $element)
     {
         if (! $element instanceof TranslateableElement) {
@@ -59,7 +66,7 @@ class FormTranslations extends BaseAbstractHelper
                 $html .= $this->renderHelper('formLabel', $element);
                 $html .= '<div class="sp7"></div>';
                 $html .= $this->renderHelper('formElement', $element);
-                $html .= $this->renderHelper('erpFormElementErrors', $element);
+                $html .= $this->renderHelper($this->errorViewHelper, $element);
                 $html .= '</div>';
             } 
             $html .= '</div>';
